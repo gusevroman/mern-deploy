@@ -1,5 +1,7 @@
 const { Router } = require('express');
 const bcrypt = require('bcryptjs'); // шифрование пароля
+const config = require('config');
+const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator'); // модуль валидации
 const User = require('../modules/User');
 
@@ -39,6 +41,7 @@ router.post('/register',
     }
   });
 
+  
 // /api/auth/login
 router.post('/login',
   [ // массив валидаторов
@@ -68,6 +71,21 @@ router.post('/login',
       }
 
       // проверка совпадают ли пароли пользователя
+      // обращаемся к bycrypt который позволяет сравнивать захешированные пароли
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(400).json({ message: 'Incorrect password, try again' });
+      }
+
+      // формирование токена
+      const token = jwt.sign(
+        { userId: user.id },
+        config.get('jwtSecret'), // по сути строка зависящая от настроек
+        { expiresIn: '1h' }, // время жизни токена
+      );
+
+      // ответ пользователю
+      res.json({ token, userId: user.id });
     } catch (e) {
       res.status(500).json({ message: 'Something went wrong, try again' });
     }

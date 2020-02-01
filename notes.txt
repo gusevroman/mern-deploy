@@ -6,3 +6,8 @@ npm i config
 npm install eslint eslint-config-airbnb-base eslint-plugin-import -D
 npm i bcryptjs
 npm i express-validator
+npm i jsonwebtoken
+npx create-react-app client //
+/client/ npm i
+/client/ npm install materialize-css@next
+/client/ npm install eslint eslint-config-airbnb-base eslint-plugin-import -D

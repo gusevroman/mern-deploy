@@ -1,4 +1,5 @@
 {
-    "port": 5000,
+    "port": 5005,
+    "jwtSecret": "secret phrase",
     "mongoUri": "mongodb+srv://rom:1234@qwe@cluster0-0k0hb.mongodb.net/app?retryWrites=true&w=majority"
 }
