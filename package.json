@@ -1,0 +1,32 @@
+{
+    "name": "mern",
+    "version": "1.0.0",
+    "description": "Mern stack",
+    "main": "app.js",
+    "scripts": {
+        "start": "node adpp.js",
+        "server": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "mern",
+        "react"
+    ],
+    "author": "Roman Gusev",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "config": "^3.2.5",
+        "express": "^4.17.1",
+        "express-validator": "^6.4.0",
+        "mongoose": "^5.8.11"
+    },
+    "devDependencies": {
+        "concurrently": "^5.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.20.0",
+        "nodemon": "^2.0.2",
+        "prettier": "^1.19.1"
+    }
+}

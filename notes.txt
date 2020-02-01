@@ -1,0 +1,8 @@
+npm init
+npm i express mongoose
+npm i -D nodemon concurrently
+// npm i prettier -D
+npm i config
+npm install eslint eslint-config-airbnb-base eslint-plugin-import -D
+npm i bcryptjs
+npm i express-validator

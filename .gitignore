@@ -1,0 +1,8 @@
+*.log
+.vscode
+.idea
+.eslintrc.js
+node_modules
+lib
+YourSpecRunner.html
+spec
